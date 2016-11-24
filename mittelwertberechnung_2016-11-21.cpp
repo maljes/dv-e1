@@ -1,4 +1,4 @@
-// Mittelwertberechnung.cpp : Definiert den Einstiegspunkt für die Konsolenanwendung.
+// Mittelwertberechnung.cpp : Definiert den Einstiegspunkt fÃ¼r die Konsolenanwendung.
 //
 
 #include "stdafx.h"
