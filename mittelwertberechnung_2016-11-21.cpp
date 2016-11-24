@@ -24,19 +24,24 @@ int main()
 		cout << "Mittelwert = " << zahl << endl; /* Ausgabe des errechneten Mittelwertes */
 		if (zahl > max) max = zahl; /* Überprüfung ob Ergebnis am größten */
 		if ((min == 0 && zahl < max) || zahl < min) min = zahl; /* Überprüfung ob Ergebnis am kleinsten sowie Überprüfung ob min = 0 */
-		cout << "Soll eine weitere Zahl eingegeben werden (J/N)? ";
-		cin >> antwort;
-		antwort = char(toupper(antwort)); /* kleine Buchstaben in große umwandeln */
-		if (antwort == 'J') { /* Überprüfung ob Eingabe = J */
-			cout << "Geben Sie die naechste Zahl ein: ";
-			cin >> eingabe;
-			i++; /* Runde + 1 */
-		}
-		if (antwort == 'N') { /* Überprüfung ob Eingabe = N */
-			cout << "Der endgueltige Mittelwert lautet: " << zahl << endl;
-			cout << "Der groesste Mittelwert lautet: " << max << endl;
-			cout << "Der kleinste Mittelwert lautet: " << min << endl;
-		}
+		do {
+			cout << "Soll eine weitere Zahl eingegeben werden (J/N)? ";
+			cin >> antwort;
+			antwort = char(toupper(antwort)); /* kleine Buchstaben in große umwandeln */
+			if (antwort == 'J') { /* Überprüfung ob Eingabe = J */
+				cout << "Geben Sie die naechste Zahl ein: ";
+				cin >> eingabe;
+				i++; /* Runde + 1 */
+			}
+			if (antwort == 'N') { /* Überprüfung ob Eingabe = N */
+				cout << "Der endgueltige Mittelwert lautet: " << zahl << endl;
+				cout << "Der groesste Mittelwert lautet: " << max << endl;
+				if (min != 0) /* Überprüfung ob min immer noch 0 */
+					cout << "Der kleinste Mittelwert lautet: " << min << endl;
+				else
+					cout << "Es wurde kein kleinerer Mittelwert als " << max << " errechnet." << endl;
+			}
+		} while (antwort != 'J' && antwort != 'N'); /* Überprüfung ob J oder N gedrückt wurde */
 	} while (antwort == 'J' && antwort != 'N');
 
 	return 0;
