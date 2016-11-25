@@ -23,7 +23,7 @@ int main()
 		cout << i << ". Zahl: " << eingabe << endl;
 		cout << "Mittelwert = " << zahl << endl;
 		if (eingabe > max) max = eingabe;
-		if ((min == 0 && eingabe < max) || zahl < min) min = eingabe; 
+		if ( i == 1 || eingabe < min) min = eingabe; 
 		do {
 			cout << "Soll eine weitere Zahl eingegeben werden (J/N)? ";
 			cin >> antwort;
@@ -36,7 +36,7 @@ int main()
 			if (antwort == 'N') {
 				cout << "Der endgueltige Mittelwert lautet: " << zahl << endl;
 				cout << "Der groesste eingegebene Wert lautet: " << max << endl;
-				if (min != 0)
+				if (min != max)
 					cout << "Der kleinste eingegebene Wert lautet: " << min << endl;
 				else
 					cout << "Es wurde kein kleinerer Wert als " << max << " eingegeben." << endl;
