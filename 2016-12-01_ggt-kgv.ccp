@@ -42,7 +42,5 @@ int ggt(int x, int y) {
 
 int kgv(int x, int y) {
 	
-	x = x*y / ggt(x, y);
-	
-	return x;
+	return x*y / ggt(x, y);
 }
