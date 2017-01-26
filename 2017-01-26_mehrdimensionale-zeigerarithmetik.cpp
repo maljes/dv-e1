@@ -30,7 +30,7 @@ int main()
 
 	cout << endl;
 
-  return 0;
+  	return 0;
 }
 
 void erhoehe(int *p_matrix, int zeilen, int spalte) {
