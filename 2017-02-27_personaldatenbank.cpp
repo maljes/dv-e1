@@ -31,12 +31,10 @@ int main()
 	cout << "Persnr \t Name \t Stunden \t Std.lohn \t Lohn" << endl;
 	for (int n = 0; n <= 3; n++) {
 		cout << personen[n].persnr << "\t" << personen[n].name << "\t" << personen[n].stunden << "\t\t" << personen[n].std_lohn << "\t\t" << personen[n].lohn;
-		if (personen[n].persnr == max.persnr) {
+		if (personen[n].persnr == max.persnr)
 			cout << "\t +";
-		}
-		if (personen[n].persnr == min.persnr) {
+		if (personen[n].persnr == min.persnr)
 			cout << "\t -" ;
-		}
 		cout << endl;
 	}
 
@@ -44,31 +42,22 @@ int main()
 }
 
 struct personal max_lohn(struct personal personen[4]) {
-	int i = 0;
-
-	while (i < 4) {
-		if (i == 0) {
+	for (int i = 0; i < 4; i++) {
+		if (i == 0)
 			max = personen[i];
-		}
-		if ((personen[i].lohn > personen[i + 1].lohn) && personen[i].lohn > max.lohn) {
-			max = personen[i];		}
-		i++;
+		if ((personen[i].lohn > personen[i + 1].lohn) && personen[i].lohn > max.lohn)
+			max = personen[i];
 	}
 
 	return max;
 }
 
 struct personal min_lohn(struct personal personen[4]) {
-	int i = 0;
-
-	while (i < 4) {
-		if (i == 0) {
+	for (int i = 0; i < 4; i++) {
+		if (i == 0) 
 			min = personen[i];
-		}
-		if ((personen[i].lohn < personen[i + 1].lohn) && personen[i].lohn < min.lohn) {
+		if ((personen[i].lohn < personen[i + 1].lohn) && personen[i].lohn < min.lohn)
 			min = personen[i];
-		}
-		i++;
 	}
 
 	return min;
